@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'authorization.User'
 
 # Application definition
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'shop',
+    'authorization',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +83,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "shop_django_drf",
+        'NAME': "shop_django_drf3",
         'USER' : 'postgres',
         'PASSWORD' : "Famlove8",
         'HOST' : "localhost",
