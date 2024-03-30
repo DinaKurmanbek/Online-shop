@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Product</title>
+</head>
+<body>
+
+
+    <div>
+        <h1> Create new product</h1>
+        <form method = "POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+<!--            <p>-->
+<!--                <label for = "name"> Name: </label>-->
+<!--                <input type = "text" name = "name" id = "name" />-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                <label for = "description"> Description: </label>-->
+<!--                <input type = "text" name = "description" id = "description" />-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                <label for = "category"> Category: </label>-->
+<!--                <input type = "text" name = "category" id = "category" />-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                <label for = "price"> Price: </label>-->
+<!--                <input type = "int" name = "price" id = "price" />-->
+<!--            </p>-->
+
+            <button type = "submit"> Submit</button>
+
+
+        </form>
+
+    </div>
+</body>
+</html>
