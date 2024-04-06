@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import generics, mixins, permissions
 from shop.models import Product, SavedItems, Order
+from shop.permissions import DjangoModelPermissionsWithRead
 from shop.serializers import ProductSerializer, OrderSerializer
 
 
@@ -38,10 +39,10 @@ class ProductListCreateView(generics.ListCreateAPIView):
 
     serializer_class = ProductSerializer
 
-    authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [permissions.DjangoModelPermissions]
+    #authentication_classes = [authentication.SessionAuthentication]
+    #permission_classes = [permissions.DjangoModelPermissions]
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    #permission_classes = [DjangoModelPermissionsWithRead]
+    permission_classes = [DjangoModelPermissionsWithRead]
 
     def perform_create(self, serializer):
         # name = serializer.validated_data.get('name')
