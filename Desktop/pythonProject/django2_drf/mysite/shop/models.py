@@ -9,15 +9,15 @@ class Category(models.Model):
         return self.name
 
 class Product(models.Model):
-    TYPE = (
-        ('F', 'food'),
-        ('NF', 'not food')
-    )
+    # TYPE = (
+    #     ('F', 'food'),
+    #     ('NF', 'not food')
+    # )
     name = models.CharField(max_length=200)
     description = models.TextField()
 
-    photo = models.ImageField(upload_to = 'images/',blank=True, null = True)
-    type = models.CharField(default='NF', choices=TYPE)
+    # photo = models.ImageField(upload_to = 'images/',blank=True, null = True)
+    # type = models.CharField(default='NF', choices=TYPE)
 
 
     price = models.DecimalField(max_digits=10, decimal_places=2)
